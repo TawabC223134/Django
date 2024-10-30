@@ -1,0 +1,29 @@
+<!-- templates/registration/register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Log in here</a>.</p>
+</body>
+</html>
+<!--
+1. username: tawabahmed1234
+password: fSqApimh.r2UBEi
+2.username:nafi4567
+password:.q62XM:NUmPz2PT
+3.username: ahmed91011
+password: qG59Gb!!f4:3yMD
+4.username:ishraq@gmail.com
+password: Q8J8!Fztmdx39RH
+5.username: nihal@gmail.com
+password: Gg9jdFFB6Rkr!Cx
+-->
