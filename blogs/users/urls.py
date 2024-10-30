@@ -1,11 +1,12 @@
-# users/urls.py
-from django.urls import path
+# Django
 from django.contrib.auth import views as auth_views
-from . import views
-from .views import RegisterView
+from django.urls import path
+# rest_framework
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
-from django.shortcuts import render
-from django.contrib.auth.views import LogoutView, LoginView, TemplateView
+from .views import RegisterView, LogoutView
+
+
 
 urlpatterns = [
     
@@ -13,5 +14,8 @@ urlpatterns = [
       path('logout/', auth_views.LogoutView.as_view(), name='logout'), #logout path
       #path('register/', views.register, name='register'),
       path('register/', RegisterView.as_view(), name='register'),
+      path('token/', TokenObtainPairView.as_view(), name='token_obtain'),
+      path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+      path('token/logout/', LogoutView.as_view(), name='token_logout'),
 
 ]
